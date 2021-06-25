@@ -13,6 +13,6 @@ class AppModule extends Module {
   final List<ModularRoute> routes = [
     //ModuleRoute(Modular.initialRoute, module: HomeModule()),
     ModuleRoute(Modular.initialRoute, module: SplashModule()),
-    ModuleRoute("login", module: LoginModule()),
+    ModuleRoute("/login", module: LoginModule()),
   ];
 }

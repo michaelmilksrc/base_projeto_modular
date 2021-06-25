@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class SplashHomePage extends StatefulWidget {
-  final String title;
-  const SplashHomePage({Key? key, this.title = 'SplashHomePage'}) : super(key: key);
   @override
   SplashHomePageState createState() => SplashHomePageState();
 }
+
 class SplashHomePageState extends State<SplashHomePage> {
+  @override
+  void initState() {
+    Future.delayed(Duration(seconds: 3), () {
+      Modular.to.pushReplacementNamed("login");
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Column(
-        children: <Widget>[],
+      body: Center(
+        child: CircularProgressIndicator(),
       ),
     );
   }
